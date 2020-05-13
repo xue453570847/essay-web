@@ -1,5 +1,5 @@
 
-let str = 'http://localhost:3000'
+let str = 'http://localhost'
 if (process.env.NODE_ENV == 'development') {
   str = 'http://localhost:3000'
 }
