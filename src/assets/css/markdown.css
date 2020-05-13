@@ -1,0 +1,13 @@
+.v-note-panel,.v-note-wrapper{
+  border: none !important;
+  z-index: 8 !important;
+
+}
+
+.v-show-content{
+  background-color: white !important;
+  height: auto !important;
+  z-index: 8 !important;
+}
+
+
