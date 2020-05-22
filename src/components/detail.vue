@@ -21,7 +21,9 @@
       />
       </div>
       <div class="detail--left__zan">
-        <el-button type="danger" round>给钱</el-button>
+        <el-button :type="detail.data.isZan?'danger':''" round @click="dianzan(detail.data.isZan)">
+          {{detail.data.isZan? '已喜欢': '喜欢'}}
+        </el-button>
       </div>
     </div>
     <div class="detail--div detail--right"></div>
@@ -30,7 +32,9 @@
 
 <script>
 import { mapGetters,mapActions } from 'vuex'
-    import marked from 'marked'
+import marked from 'marked'
+var userController = require('../../env');
+import axios from 'axios'
 import showdown from 'showdown'
 export default {
   name: 'detail',
@@ -45,7 +49,17 @@ export default {
   mounted () {
   },
   methods: {
-    ...mapActions(['getDetail', 'clearDetail'])
+    ...mapActions(['getDetail', 'clearDetail']),
+    async dianzan (item) {
+      const {aid, uid} = this.$route.query
+      this.detail.data.isZan = !this.detail.data.isZan
+      let params = {
+        aid,
+        uid,
+        type: !item
+      }
+      const data = await axios.post(`${userController}/user/zan`,params)
+    }
   },
   watch: {
     detail (item) {

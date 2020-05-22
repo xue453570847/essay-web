@@ -168,6 +168,7 @@ export default {
     li{
       position: relative;
       line-height: 40px;
+      height: 40px;
       list-style: none;
       font-size: 15px;
       color: #f2f2f2;

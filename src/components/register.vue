@@ -3,7 +3,7 @@
     <div class="sign">
       <div class="logo">
         <router-link to="/">
-          <a class="text">前端</a>
+          <a class="text">把酒邀月</a>
         </router-link>
       </div>
       <div class="main">

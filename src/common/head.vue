@@ -1,6 +1,6 @@
 <template>
   <div class="head" v-show="show">
-    <span class="head__desc">前端</span>
+    <span class="head__desc">把酒邀月</span>
     <ul class="head__ul">
       <router-link to="/home">
         <li class="head__li--home">首页
@@ -18,6 +18,8 @@
       </router-link>
       <li class="head__li--active" v-show="isLogin">
         Welcome back <span>{{user}}</span>
+
+        <span @click="quit" class="head__li--active--quit">退出</span>
       </li>
       <router-link to="/project">
         <li class="head__li--pro">
@@ -51,6 +53,10 @@ export default {
     this.getPath()
   },
   methods: {
+    quit () {
+      Tools.clearCookie('username')
+      window.location.reload()
+    },
     async getPath(){
 
       // 路由变化 判断是否有头部 & 判断用户是否登录
@@ -142,7 +148,16 @@ export default {
         margin-left: 5px;
         color: forestgreen;
       }
+      &--quit{
+        padding-left:10px;
+        color: #969696 !important;
+      }
+      &--quit:hover{
+        text-decoration:underline;
+        cursor: pointer;
+      }
     }
+
   }
 }
 </style>
