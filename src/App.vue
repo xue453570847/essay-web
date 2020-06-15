@@ -1,3 +1,9 @@
+<!--
+ * @Author: xuezsl@163.com
+ * @Date: 2020-06-04 17:57:47
+ * @LastEditors: zhaoxing.xue
+ * @LastEditTime: 2020-06-04 18:09:50
+--> 
 <template>
   <div id="app">
     <my-header></my-header>
@@ -25,7 +31,7 @@ export default {
     MyHeader
   },
   mounted () {
-
+    dfsdf()
   },
   methods: {
   }
